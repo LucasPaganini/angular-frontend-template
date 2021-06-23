@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="pt">
+    <body>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+        <target state="translated">Início</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/pages/home-page/home-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4908250956190866674" datatype="html">
+        <source>Home | TODO</source>
+        <target state="translated">Início | TODO</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/pages/home-page/home-page.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="265780325830854162" datatype="html">
+        <source>404 - Not found</source>
+        <target state="final">404 - Não encontrado</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/not-found/pages/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6981104157512578114" datatype="html">
+        <source>This page was deleted or never existed. You'll be redirected to the home page in <x id="INTERPOLATION" equiv-text="{{ secondsToRedirect }}"/>.</source>
+        <target state="translated">Essa página foi apagada ou nunca existiu. Você será redirecionado para a página inicial em <x id="INTERPOLATION" equiv-text="{{ secondsToRedirect }}"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/not-found/pages/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4036260119784778717" datatype="html">
+        <source>Not found | TODO</source>
+        <target state="translated">Não encontrado | TODO</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/not-found/pages/not-found-page/not-found-page.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

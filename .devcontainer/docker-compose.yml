@@ -1,0 +1,30 @@
+# Docker compose for development
+
+version: '3.8'
+
+services:
+  main:
+    build:
+      dockerfile: ./.devcontainer/Dockerfile
+      context: ..
+    deploy:
+      resources:
+        limits:
+          cpus: '8'
+          memory: 16g
+        reservations:
+          cpus: '0.25'
+          memory: 2g
+    image: todo/main
+    ports:
+      - '4200'
+    networks:
+      - main-net-dev
+    tty: true
+    volumes:
+      - ..:/var/www:cached
+    command: bash
+
+networks:
+  main-net-dev:
+    driver: bridge

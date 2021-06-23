@@ -1,0 +1,40 @@
+name: Auto merge
+
+on:
+  pull_request:
+    branches-ignore: [master]
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    branches-ignore: [master]
+    types:
+      - submitted
+  check_suite:
+    branches-ignore: [master]
+    types:
+      - completed
+  status:
+    branches-ignore: [master]
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: automerge
+        uses: 'pascalgn/automerge-action@v0.12.0'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GH_PAT }}'
+          MERGE_LABELS: 'automerge'
+          MERGE_REMOVE_LABELS: 'automerge'
+          MERGE_DELETE_BRANCH: true
+          MERGE_FORKS: false
+          MERGE_RETRIES: 20
+          MERGE_RETRY_SLEEP: 30000

@@ -1,0 +1,12 @@
+// Provide basic, default focus styles.
+*:focus,
+*:focus-visible {
+  outline: #9a6aff auto 2px;
+  outline-offset: 4px;
+}
+
+// Remove default focus styles for mouse users ONLY if
+// :focus-visible is supported on this platform.
+*:focus:not(:focus-visible) {
+  outline: none;
+}

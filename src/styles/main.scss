@@ -1,0 +1,10 @@
+@import 'reset.scss';
+@import 'fonts.scss';
+@import 'outline.scss';
+
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+html,
+body {
+  background: white;
+}

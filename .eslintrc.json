@@ -1,0 +1,267 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*", "cypress/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": "tsconfig.json",
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "prettier"
+      ],
+      "plugins": [
+        "@typescript-eslint",
+        "simple-import-sort",
+        "import",
+        "@angular-eslint",
+        "@angular-eslint/template",
+        "prefer-arrow",
+        "jsdoc"
+      ],
+      "rules": {
+        // IMPORT RULES
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              { "name": "rxjs/Rx", "message": "Please import directly from 'rxjs' instead" },
+              { "name": "rxjs/internal" },
+              { "name": "lodash", "message": "Please use lodash-es instead." },
+              { "name": "cypress", "message": "Don't import cypress in the source code" }
+            ],
+            "patterns": ["rxjs/internal/*", "lodash/*", "cypress"]
+          }
+        ],
+        "sort-imports": "off",
+        "simple-import-sort/imports": ["error", { "groups": [["^\\u0000", "^@?\\w", "^[^.]", "^\\."]] }],
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+
+        // ANGULAR RULES
+        "@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "app", "style": "camelCase" }],
+        "@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "app", "style": "kebab-case" }],
+        "@angular-eslint/component-class-suffix": ["error"],
+        "@angular-eslint/contextual-lifecycle": ["error"],
+        "@angular-eslint/directive-class-suffix": ["error"],
+        "@angular-eslint/no-conflicting-lifecycle": ["error"],
+        "@angular-eslint/no-host-metadata-property": ["error"],
+        "@angular-eslint/no-input-rename": ["error"],
+        "@angular-eslint/no-inputs-metadata-property": ["error"],
+        "@angular-eslint/no-output-native": ["error"],
+        "@angular-eslint/no-output-on-prefix": ["error"],
+        "@angular-eslint/no-output-rename": ["error"],
+        "@angular-eslint/no-outputs-metadata-property": ["error"],
+        "@angular-eslint/use-lifecycle-interface": ["error"],
+        "@angular-eslint/use-pipe-transform-interface": ["error"],
+
+        // REGULAR RULES
+        "eol-last": ["error"],
+        "jsdoc/check-alignment": ["error"],
+        "new-parens": ["error"],
+        "no-trailing-spaces": ["error"],
+        "constructor-super": ["error"],
+        "guard-for-in": ["error"],
+        "id-blacklist": [
+          "error",
+          "any",
+          "Number",
+          "number",
+          "String",
+          "string",
+          "Boolean",
+          "boolean",
+          "Undefined",
+          "undefined"
+        ],
+        "id-match": ["error"],
+        "import/no-deprecated": ["warn"],
+        "jsdoc/newline-after-description": ["error"],
+        "jsdoc/no-types": ["error"],
+        "no-bitwise": ["error"],
+        "no-caller": ["error"],
+        "no-cond-assign": ["error"],
+        "no-console": [
+          "error",
+          {
+            "allow": [
+              "log",
+              "warn",
+              "dir",
+              "timeLog",
+              "assert",
+              "clear",
+              "count",
+              "countReset",
+              "group",
+              "groupEnd",
+              "table",
+              "dirxml",
+              "error",
+              "groupCollapsed",
+              "Console",
+              "profile",
+              "profileEnd",
+              "timeStamp",
+              "context"
+            ]
+          }
+        ],
+        "no-debugger": ["error"],
+        "no-eval": ["error"],
+        "no-fallthrough": ["error"],
+        "no-new-wrappers": ["error"],
+        "no-throw-literal": ["error"],
+        "no-undef-init": ["error"],
+        "no-unsafe-finally": ["error"],
+        "no-unused-labels": ["error"],
+        "no-var": ["error"],
+        "object-shorthand": ["error"],
+        "one-var": ["error", "never"],
+        "prefer-arrow/prefer-arrow-functions": ["error"],
+        "radix": ["error"],
+        "use-isnan": ["error"],
+        "no-extra-semi": "off",
+        "no-unused-vars": "off",
+        "no-redeclare": "off",
+        "no-loss-of-precision": "error",
+        "prefer-const": "error",
+        "eqeqeq": ["error", "always"],
+        "camelcase": ["error", { "properties": "always" }],
+
+        // TYPESCRIPT RULES
+        "@typescript-eslint/type-annotation-spacing": ["error"],
+        "@typescript-eslint/adjacent-overload-signatures": ["error"],
+        "@typescript-eslint/no-empty-interface": ["error"],
+        "@typescript-eslint/no-inferrable-types": ["error", { "ignoreParameters": true }],
+        "@typescript-eslint/no-misused-new": ["error"],
+        "@typescript-eslint/no-namespace": ["error"],
+        "@typescript-eslint/no-unused-expressions": ["error"],
+        "@typescript-eslint/prefer-function-type": ["error"],
+        "@typescript-eslint/prefer-namespace-keyword": ["error"],
+        "@typescript-eslint/no-shadow": ["error", { "hoist": "all" }],
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/method-signature-style": "error",
+        "@typescript-eslint/no-confusing-non-null-assertion": "error",
+        "@typescript-eslint/no-dynamic-delete": "error",
+        "@typescript-eslint/no-for-in-array": "error",
+        "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/prefer-as-const": "error",
+        "@typescript-eslint/prefer-for-of": "error",
+        "@typescript-eslint/prefer-readonly": "error",
+        "@typescript-eslint/prefer-string-starts-ends-with": "error",
+        "@typescript-eslint/restrict-plus-operands": "error",
+        "@typescript-eslint/restrict-template-expressions": "error",
+        "@typescript-eslint/unified-signatures": "error",
+        "@typescript-eslint/dot-notation": "error",
+        "@typescript-eslint/no-redeclare": "error",
+        "@typescript-eslint/no-throw-literal": "error",
+        "@typescript-eslint/strict-boolean-expressions": "error",
+        "@typescript-eslint/triple-slash-reference": [
+          "error",
+          { "path": "never", "types": "prefer-import", "lib": "never" }
+        ],
+        "@typescript-eslint/explicit-member-accessibility": ["error", { "overrides": { "constructors": "no-public" } }],
+        "@typescript-eslint/explicit-module-boundary-types": ["error", { "allowArgumentsExplicitlyTypedAsAny": true }],
+        "@typescript-eslint/array-type": ["error", { "default": "generic" }],
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            "extendDefaults": false,
+            "types": {
+              "Function": "Avoid using the `Function` type. Use a specific function type, like `() => void`.",
+              "Object": { "message": "Avoid using the `Object` type. Did you mean `object`?", "fixWith": "object" },
+              "Boolean": { "message": "Avoid using the `Boolean` type. Did you mean `boolean`?", "fixWith": "boolean" },
+              "Number": { "message": "Avoid using the `Number` type. Did you mean `number`?", "fixWith": "number" },
+              "String": { "message": "Avoid using the `String` type. Did you mean `string`?", "fixWith": "string" },
+              "Symbol": { "message": "Avoid using the `Symbol` type. Did you mean `symbol`?", "fixWith": "symbol" }
+            }
+          }
+        ],
+        "@typescript-eslint/consistent-type-assertions": [
+          "error",
+          { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          { "default": ["static-field", "static-method", "decorated-field", "decorated-method", "constructor"] }
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true,
+            "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "default",
+            "format": ["camelCase"],
+            "leadingUnderscore": "allowSingleOrDouble",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "typeLike",
+            "format": ["PascalCase"]
+          },
+          {
+            "selector": "typeLike",
+            "format": ["PascalCase"],
+            "modifiers": ["unused"],
+            "leadingUnderscore": "require"
+          },
+          {
+            "selector": "variable",
+            "modifiers": ["const"],
+            "format": ["UPPER_CASE", "camelCase"],
+            "leadingUnderscore": "allow"
+          },
+          {
+            "selector": ["variableLike", "memberLike"],
+            "format": ["camelCase"],
+            "modifiers": ["private"],
+            "prefix": ["__", "_"]
+          },
+          {
+            "selector": ["variableLike", "memberLike"],
+            "format": ["camelCase"],
+            "modifiers": ["unused"],
+            "leadingUnderscore": "require"
+          },
+          {
+            "selector": "enumMember",
+            "format": ["PascalCase"]
+          },
+          {
+            "selector": ["objectLiteralProperty", "objectLiteralMethod"],
+            "format": null
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.spec.ts"],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "defaultCommandTimeout": 10000,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  },
+  "env": {
+    "env_id": "development"
+  }
+}

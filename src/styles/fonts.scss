@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Fira Code Regular'), local('FiraCode-Regular'), local('Fira Code'),
+    url('/assets/fonts/fira-code-regular.woff2') format('woff2'),
+    url('/assets/fonts/fira-code-regular.woff') format('woff'),
+    url('/assets/fonts/fira-code-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 500;
+  font-style: normal;
+  src:
+  // local('Gotham Medium'), local('Gotham-Medium'), local('Gotham Pro Medium'), local('GothamPro-Medium'),
+  //   local('Gotham Pro'), url('/assets/fonts/gotham-pro-medium.woff2') format('woff2'),
+  //   url('/assets/fonts/gotham-pro-medium.woff') format('woff'),
+    url('/assets/fonts/gotham-pro-medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alice';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Alice Regular'), local('Alice-Regular'), local('Alice'),
+    url('/assets/fonts/alice-regular.woff2') format('woff2'), url('/assets/fonts/alice-regular.woff') format('woff'),
+    url('/assets/fonts/alice-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 400;
+  font-style: normal;
+  src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), local('Playfair Display'),
+    url('/assets/fonts/playfair-display-regular.woff2') format('woff2'),
+    url('/assets/fonts/playfair-display-regular.woff') format('woff'),
+    url('/assets/fonts/playfair-display-regular.ttf') format('truetype');
+}
